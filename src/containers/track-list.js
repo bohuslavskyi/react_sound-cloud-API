@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {selectTrack} from '../actions/index';
 import {Pager} from 'react-bootstrap'
-import PlayerWidget from "../components/playerWidget/playerWidget"
+import ActiveTrack from "../containers/active-track"
 
 
 class TrackList extends Component {
@@ -15,13 +15,18 @@ class TrackList extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.tracks.length > 0){
+            this.props.selectTrack(nextProps.tracks[0][0])
+        }
+    }
+
     prevPage = () => {
         if(this.state.currentPage != 0){
             this.setState({
                 currentPage: --this.state.currentPage
             });
         }
-
     }
     nextPage = () => {
         if(this.state.currentPage != this.props.tracks.length-1){
@@ -29,11 +34,9 @@ class TrackList extends Component {
                 currentPage: ++this.state.currentPage
             });
         }
-
     }
 
     renderList = () => {
-
         if ( this.props.tracks.length === 0) {
             return null;
         }
@@ -68,12 +71,11 @@ class TrackList extends Component {
                         {this.renderList()}
                     </ul>
                     <Pager>
-                        <Pager.Item href="#" onClick = {this.prevPage}>&laquo;</Pager.Item>{' '}
-                        <Pager.Item href="#" onClick = {this.nextPage}>&raquo;</Pager.Item>
+                        <Pager.Item previous  href="#" onClick = {this.prevPage}>&laquo;</Pager.Item>{' '}
+                        <Pager.Item next href="#" onClick = {this.nextPage}>&raquo;</Pager.Item>
                     </Pager>
-                    {/*<button onClick={() => this.nextPage()}>Next</button>*/}
                 </div>
-                <PlayerWidget />
+                <ActiveTrack />
             </div>
         )
     }

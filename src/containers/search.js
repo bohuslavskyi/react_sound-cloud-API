@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getTtrackList} from '../actions'
+import {getTtrackList, lastFiveSearches} from '../actions'
 
 class Search extends Component {
 
@@ -10,6 +10,14 @@ class Search extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(this.props.checkedLastSearch !== nextProps.checkedLastSearch) {
+            this.setState({value: nextProps.checkedLastSearch});
+            this.props.getTtrackList(nextProps.checkedLastSearch);
+        }
     }
 
     componentWillMount () {
@@ -22,7 +30,9 @@ class Search extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.getTtrackList(this.state.value)
+        this.props.getTtrackList(this.state.value);
+        this.props.lastFiveSearches(this.state.value);
+
     }
 
     render(){
@@ -33,7 +43,7 @@ class Search extends Component {
                        name="q"
                        value={this.state.value}
                        onChange={this.handleChange}/>
-                <button type="Submit" className="btn btn-orange col-sm-1">Search</button> {/*onclick="search()"*/}
+                <button type="Submit" className="btn btn-orange col-sm-1">Search</button>
             </form>
         </div>
     }
@@ -47,5 +57,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {getTtrackList})(Search);
+export default connect(mapStateToProps, {getTtrackList, lastFiveSearches})(Search);
 
