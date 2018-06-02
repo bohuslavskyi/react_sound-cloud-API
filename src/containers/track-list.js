@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {selectTrack} from '../actions/index';
 import {Pager} from 'react-bootstrap'
 import ActiveTrack from "../containers/active-track"
+import '../styles/TraccksList.css';
 
 
 class TrackList extends Component {

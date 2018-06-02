@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../styles/App.css';
 import Search from "../containers/search"
 import TrackList from "../containers/track-list"
 import LasrFiveSearches from "../containers/last-five-searches"

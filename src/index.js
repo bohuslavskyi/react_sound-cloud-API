@@ -9,6 +9,7 @@ import ReduxThunk from 'redux-thunk';
 
 
 import './index.css';
+
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import { CLIENT_ID, REDIRECT_URI } from './constants/client_id';

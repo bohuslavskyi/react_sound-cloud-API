@@ -1,0 +1,26 @@
+.searchWrap {
+    padding-top: 15px;
+}
+
+.btn-orange {
+    background-color: #f60;
+    color: white;
+    height: 40px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-orange:hover {
+    background-color: #f06200;
+    color: white;
+}
+
+.btn-orange:focus {
+    color: white;
+    outline: none !important;
+}
+
+.btn-orange:active {
+    background-color: #f60;
+    outline: none !important;
+}

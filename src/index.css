@@ -1,38 +1,6 @@
 body {
   background-color: #f1f1f1;
 }
-.header{
-  margin-top: 100px;
-}
-.container {
-  background-color: white;
-  margin-bottom: 100px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-.searchWrap {
-  padding-top: 15px;
-}
-.badgeWrap{
-  padding: 40px 0 0 0;
-}
-.lastFive{
-  padding: 43px 0 0 0;
-  letter-spacing: 2px;
-  font-weight: 500;
-  font-size: 13px;}
-.badge{
-  padding: 6px 10px 6px 10px;
-  margin-right: 10px;
-}
-.close{
-  font-size: 12px;
-  margin-left: 6px;
-}
-.badge{
-  background-color: #f1f1f1;
-  color: #3c3c3c;
-}
 
 input {
   height: 40px;
@@ -42,71 +10,6 @@ input {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   color: #3c3c3c;
-}
-
-
-.btn-orange {
-  background-color: #f60;
-  color: white;
-  height: 40px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.btn-orange:hover {
-  background-color: #f06200;
-  color: white;
-}
-
-.btn-orange:focus {
-  color: white;
-  outline: none !important;
-}
-
-.btn-orange:active {
-  background-color: #f60;
-  outline: none !important;
-}
-
-.SClist{
-  list-style: none;
-  margin: 40px 0 20px 0;
-  padding: 0;
-}
-.liItem{
-  margin-bottom: 25px;
-  cursor: pointer;
-  margin-left: 0;
-}
-
-.list-group-item{
-  border: none;
-}
-
-.trackImg{
-  width: 60px;
-  height:60px;
-  background-color: #f60;
-  border-radius: 50%;
-  opacity: 0.6;
-}
-.liItem:hover .trackImg{
-  opacity: 1;
-}
-
-.trackName{
-  font-weight: 600;
-  font-size: 13px;
-  margin: 5px 0 0 0;
-}
-
-.userName{
-  font-size: 10px;
-  margin-left: 8px;
-  background-color: #f6f6f6;
-  width: auto;
-  padding: 3px 8px 3px 8px;
-  border-radius: 6px;
 }
 
 a{
@@ -120,6 +23,7 @@ a:focus{
   color: #ff6600;
 }
 
+
 iframe{
   margin: 20px 0 20px 0;
 }
@@ -129,43 +33,3 @@ iframe{
   margin-top: 30px;
 }
 
-
-.listPadding{
-  padding-left: 0;
-}
-
-
-
-
-.example-enter {
-  opacity: 0.01;
-  transition: opacity 10s ease-in;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-}
-
-.example-leave {
-  opacity: 1;
-  transition: opacity 10s ease-in;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-}
-
-
-.toggle-enter {
-  animation-name: fade-in;
-  animation-duration: 600ms;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0.0;
-  }
-  to {
-    opacity: 1.0;
-  }
-}

@@ -1,0 +1,20 @@
+.badgeWrap{
+    padding: 40px 0 0 0;
+}
+.lastFive{
+    padding: 43px 0 0 0;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 13px;}
+.badge{
+    padding: 6px 10px 6px 10px;
+    margin-right: 10px;
+}
+.close{
+    font-size: 12px;
+    margin-left: 6px;
+}
+.badge{
+    background-color: #f1f1f1;
+    color: #3c3c3c;
+}

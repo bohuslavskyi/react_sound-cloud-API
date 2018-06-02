@@ -53,7 +53,7 @@ export function selectTrack(track) {
 
 export function lastFiveSearches(search) {
     let LS = localStorage.getItem("searches");
-    let arrLS
+    let arrLS;
     if(!LS && LS != ""){
         localStorage.setItem("searches", search);
         LS = localStorage.getItem("searches");
@@ -85,10 +85,14 @@ export function lastFiveSearches(search) {
 
 export function closeLastSearch(search) {
     let LS = localStorage.getItem("searches");
-    let arrLS = LS.split(",");
+    let arrLS;
+    if(LS){
+        arrLS = LS.split(",");
+        deleteArrItem(search, arrLS);
+        deleteArrItem("", arrLS);
+    }
 
-    deleteArrItem(search, arrLS);
-    deleteArrItem("", arrLS);
+
 
     localStorage.setItem("searches", arrLS);
 

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getTtrackList, lastFiveSearches} from '../actions'
 
+import '../styles/Search.css';
+
 class Search extends Component {
 
     constructor(props) {
@@ -30,8 +32,11 @@ class Search extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.getTtrackList(this.state.value);
-        this.props.lastFiveSearches(this.state.value);
+        if(this.state.value.length != 0){
+            this.props.getTtrackList(this.state.value);
+            this.props.lastFiveSearches(this.state.value);
+        }
+
 
     }
 
